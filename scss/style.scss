@@ -1,0 +1,111 @@
+$primaryColor: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@font-face {
+  font-family: 'latohairline';
+  src: url('../font/lato-hairline/lato-hairline-webfont.eot');
+  src: url('../font/lato-hairline/lato-hairline-webfont.eot?#iefix') format('embedded-opentype'), url('../font/lato-hairline/lato-hairline-webfont.woff2') format('woff2'), url('../font/lato-hairline/lato-hairline-webfont.woff') format('woff'), url('../font/lato-hairline/lato-hairline-webfont.ttf') format('truetype'), url('../font/lato-hairline/lato-hairline-webfont.svg#latohairline') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'times_new';
+  src: url('../font/times-new/timesnewromanps-webfont.eot');
+  src: url('../font/times-new/timesnewromanps-webfont.eot?#iefix') format('embedded-opentype'), url('../font/times-new/timesnewromanps-webfont.woff2') format('woff2'), url('../font/times-new/timesnewromanps-webfont.woff') format('woff'), url('../font/times-new/timesnewromanps-webfont.ttf') format('truetype'), url('../font/times-new/timesnewromanps-webfont.svg#times_new_roman_psregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrapper {
+  max-width: 1120px;
+  padding: 0 30px;
+}
+
+header {
+  background: url(../img/main_image.png) no-repeat 50% 50%;
+  & .wrapper {
+    text-align: center;
+    & .header__title {
+      opacity: 0.7;
+      text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+      color: $primaryColor;
+      font-family: "times_new";
+      font-size: 36px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 30px;
+      font-style: normal;
+    }
+    & h1 {
+      text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+      color: $primaryColor;
+      font-family: "Lato";
+      font-size: 100px;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 30px;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+    & .header__anchor {
+      color: $primaryColor;
+      font-family: "Lato";
+      font-size: 18px;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 66px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      width: 280px;
+      height: 68px;
+      border: 3px solid #ffffff;
+      display: block;
+      margin: 0 auto;
+    }
+    & .header__text {
+      text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+      color: #ffffff;
+      font-family: "Lato";
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 30px;
+      text-transform: uppercase;
+      & span {
+        font-family: "Lato";
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: 0.7px;
+        line-height: normal;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.header__body {
+  display: flex;
+  justify-content: space-between;
+  & nav {
+    padding: 50px 0 0 0;
+    & a {
+      text-decoration: none;
+      text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+      color: $primaryColor;
+      font-family: "Lato";
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 30px;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin: 0 30px 0 0;
+    }
+  }
+}
