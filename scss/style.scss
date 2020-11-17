@@ -1,4 +1,8 @@
 $primaryColor: #fff;
+$secondaryColor: #000;
+$lineColor:#f57365;
+$bgColor: #f7f7f7;
+$footerColor: #8b8b8b;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 @font-face {
   font-family: 'latohairline';
@@ -9,9 +13,9 @@ $primaryColor: #fff;
 }
 
 @font-face {
-  font-family: 'times_new';
-  src: url('../font/times-new/timesnewromanps-webfont.eot');
-  src: url('../font/times-new/timesnewromanps-webfont.eot?#iefix') format('embedded-opentype'), url('../font/times-new/timesnewromanps-webfont.woff2') format('woff2'), url('../font/times-new/timesnewromanps-webfont.woff') format('woff'), url('../font/times-new/timesnewromanps-webfont.ttf') format('truetype'), url('../font/times-new/timesnewromanps-webfont.svg#times_new_roman_psregular') format('svg');
+  font-family: 'times_new_roman_psbold_italic';
+  src: url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.eot');
+  src: url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.eot?#iefix') format('embedded-opentype'), url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.woff2') format('woff2'), url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.woff') format('woff'), url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.ttf') format('truetype'), url('../font/timesnewromanps/timesnewromanps-bolditalicmt-webfont.svg#times_new_roman_psbold_italic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,35 +23,90 @@ $primaryColor: #fff;
 .wrapper {
   max-width: 1120px;
   padding: 0 30px;
+  margin: 0 auto;
 }
 
 header {
   background: url(../img/main_image.png) no-repeat 50% 50%;
-  & .wrapper {
+  background-size: cover;
+  & .header__wrapper {
     text-align: center;
+    padding: 0 0 240px 0;
+    & .header__body {
+      display: flex;
+      justify-content: space-between;
+      & nav {
+        padding: 50px 0 0 0;
+        display: flex;
+        & a {
+          text-decoration: none;
+          text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+          color: $primaryColor;
+          font-family: "Lato";
+          font-size: 14px;
+          font-weight: 700;
+          font-style: normal;
+          line-height: 30px;
+          text-align: left;
+          text-transform: uppercase;
+          letter-spacing: 0.7px;
+          margin: 0 30px 0 0;
+        }
+        & .header__menu {
+          width: 25px;
+          height: 20px;
+          border-bottom: 2px solid $primaryColor;
+          position: relative;
+          margin: 5px 0 0 0;
+          &:hover::before {
+            width: 70%;
+            transition: 0.4s all;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            background-color: $primaryColor;
+            transition: 0.4s all;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: 0;
+            background-color: $primaryColor;
+          }
+        }
+      }
+    }
     & .header__title {
       opacity: 0.7;
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
       color: $primaryColor;
-      font-family: "times_new";
-      font-size: 36px;
+      font-family: "times_new_roman_psbold_italic";
+      font-size: calc(25px + 10 * (100vw / 1600));
       font-weight: 400;
       font-style: normal;
       letter-spacing: normal;
       line-height: 30px;
-      font-style: normal;
+      padding: 275px 0 20px 0;
     }
     & h1 {
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
       color: $primaryColor;
       font-family: "Lato";
-      font-size: 100px;
+      font-size: calc(70px + 30 * (100vw / 1600));
       font-weight: 700;
       font-style: normal;
       letter-spacing: normal;
       line-height: 30px;
       text-transform: uppercase;
-      font-style: normal;
+      padding: 25px;
     }
     & .header__anchor {
       color: $primaryColor;
@@ -62,13 +121,19 @@ header {
       text-decoration: none;
       width: 280px;
       height: 68px;
-      border: 3px solid #ffffff;
+      border: 3px solid $primaryColor;
       display: block;
-      margin: 0 auto;
+      margin: 40px auto;
+      transition: 0.4s all;
+      &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        transition: 0.4s all;
+      }
     }
     & .header__text {
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
-      color: #ffffff;
+      color: $primaryColor;
       font-family: "Lato";
       font-size: 14px;
       font-weight: 400;
@@ -88,24 +153,275 @@ header {
   }
 }
 
-.header__body {
+.info__wrapper {
   display: flex;
-  justify-content: space-between;
-  & nav {
-    padding: 50px 0 0 0;
-    & a {
-      text-decoration: none;
-      text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
-      color: $primaryColor;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  & .info__item {
+    text-align: center;
+    max-width: 360px;
+    & img {
+      margin: 0 auto;
+    }
+    & h2 {
+      padding: 20px 0 30px 0;
+      color: $secondaryColor;
       font-family: "Lato";
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 700;
       font-style: normal;
+      letter-spacing: normal;
       line-height: 30px;
-      text-align: left;
       text-transform: uppercase;
-      letter-spacing: 0.7px;
-      margin: 0 30px 0 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 30%;
+        width: 88px;
+        height: 1px;
+        background-color: $lineColor;
+      }
+    }
+    & .info__text {
+      color: $secondaryColor;
+      font-family: "Lato";
+      font-size: 16px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .info__wrapper {
+    justify-content: center;
+    & .info__text {
+      padding: 0 0 10px 0;
+    }
+  }
+}
+
+.app {
+  background-color: $bgColor;
+  & .app__wrapper {
+    padding: 100px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & .app_img {
+      max-width: 100%;
+    }
+    & .app__info {
+      padding: 80px 0 0 0;
+      & h2 {
+        color: $secondaryColor;
+        font-family: "Lato";
+        font-size: 18px;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 30px;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 88px;
+          height: 1px;
+          background-color: $lineColor;
+        }
+      }
+      & p {
+        padding: 20px 0 0 0;
+        max-width: 490px;
+        color: $secondaryColor;
+        font-family: "Lato";
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 18px;
+        text-align: left;
+      }
+      & .app__link {
+        padding: 20px 0 0 0;
+        display: flex;
+        & a {
+          text-decoration: none;
+          &:first-child {
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1037px) {
+  .app {
+    & .app__wrapper {
+      justify-content: center;
+      padding: 30px 0 0 0;
+      & .app_img {
+        order: 1;
+      }
+      & .app__info {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.reviews {
+  background: url(../img/bgreviews.png) no-repeat 50% 50%;
+  background-size: cover;
+  & .reviews__wrapper {
+    padding: 80px 0;
+    & .reviews__item {
+      text-align: center;
+      & img {
+        max-width: 104px;
+        margin: 0 auto;
+      }
+    }
+    & .owl-dots {
+      text-align: center;
+      & .owl-dot {
+        width: 10px;
+        height: 10px;
+        background-color: $primaryColor;
+        opacity: 0.2;
+        border-radius: 10px;
+        margin: 40px 10px 0 0;
+        &:focus {
+          outline: none;
+        }
+      }
+      & .active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.browse {
+  text-align: center;
+  padding: 100px 0 0 0;
+  & h2 {
+    color: $secondaryColor;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 0 0 50px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      width: 88px;
+      height: 1px;
+      background-color: $lineColor;
+    }
+  }
+  & .browse__img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.statistica {
+  & .statistica__wrapper {
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & .statistica__item {
+      text-align: center;
+      padding: 10px 10px;
+      & p:first-child {
+        color: $secondaryColor;
+        font-family: "Lato";
+        font-size: 36px;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 30px;
+        text-align: left;
+        margin: 0 0 12px 0;
+      }
+      & p:last-child {
+        color: $secondaryColor;
+        font-family: "Lato";
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 18px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .statistica {
+    & .statistica__wrapper {
+      justify-content: center;
+    }
+  }
+}
+
+footer {
+  background-color: $bgColor;
+  & .footer__wrapper {
+    padding: 42px 0 38px 0;
+    display: flex;
+    justify-content: space-between;
+    & p:first-child {
+      opacity: 0.5;
+      color: $footerColor;
+      font-family: "Lato";
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: center;
+    }
+    & p:last-child {
+      color: $footerColor;
+      font-family: "Lato";
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 2.8px;
+      line-height: normal;
+      text-transform: uppercase;
+      & span {
+        color: $secondaryColor;
+        font-family: "Lato";
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 2.8px;
+        line-height: normal;
+      }
     }
   }
 }
