@@ -15,23 +15,35 @@
   font-style: normal;
 }
 
+h2 {
+  font-family: "Lato";
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
 .wrapper {
-  max-width: 1120px;
-  padding: 0 30px;
+  max-width: 1160px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
+body {
+  position: relative;
+}
+
 header {
-  background: url(../img/main_image.png) no-repeat 50% 50%;
-  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-header .header__wrapper {
-  text-align: center;
-  padding: 0 0 240px 0;
-}
-
-header .header__wrapper .header__body {
+header .header__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,55 +52,67 @@ header .header__wrapper .header__body {
           justify-content: space-between;
 }
 
-header .header__wrapper .header__body nav {
+header .header__body nav .wrapper-burger {
   padding: 50px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .header__wrapper .header__body nav a {
+header .header__body nav .wrapper-burger li a {
   text-decoration: none;
   text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
   color: #fff;
   font-family: "Lato";
   font-size: 14px;
+  font-size: calc(12px + 2 * (100vw / 1600));
   font-weight: 700;
   font-style: normal;
   line-height: 30px;
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 0.7px;
-  margin: 0 30px 0 0;
+  margin: 0 20px 0 0;
 }
 
-header .header__wrapper .header__body nav .header__menu {
+header .header__body nav .wrapper-burger li .burger-menu {
   width: 25px;
   height: 20px;
-  border-bottom: 2px solid #fff;
   position: relative;
   margin: 5px 0 0 0;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
 }
 
-header .header__wrapper .header__body nav .header__menu:hover::before {
+header .header__body nav .wrapper-burger li .burger-menu span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+header .header__body nav .wrapper-burger li .burger-menu:hover::before {
   width: 70%;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
-header .header__wrapper .header__body nav .header__menu::before {
+header .header__body nav .wrapper-burger li .burger-menu::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  top: 50%;
+  top: 45%;
   left: 0;
   background-color: #fff;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
-header .header__wrapper .header__body nav .header__menu::after {
+header .header__body nav .wrapper-burger li .burger-menu::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -98,7 +122,17 @@ header .header__wrapper .header__body nav .header__menu::after {
   background-color: #fff;
 }
 
-header .header__wrapper .header__title {
+.hero__section {
+  background: url(../img/main_image.png) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.hero__section .hero__wrapper {
+  text-align: center;
+  padding: 115px 10px 240px 10px;
+}
+
+.hero__section .hero__wrapper .hero__title {
   opacity: 0.7;
   text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
   color: #fff;
@@ -108,14 +142,14 @@ header .header__wrapper .header__title {
   font-style: normal;
   letter-spacing: normal;
   line-height: 30px;
-  padding: 275px 0 20px 0;
+  padding: 246px 0 20px 0;
 }
 
-header .header__wrapper h1 {
+.hero__section .hero__wrapper h1 {
   text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
   color: #fff;
   font-family: "Lato";
-  font-size: calc(70px + 30 * (100vw / 1600));
+  font-size: calc(50px + 50 * (100vw / 1600));
   font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
@@ -124,7 +158,7 @@ header .header__wrapper h1 {
   padding: 25px;
 }
 
-header .header__wrapper .header__anchor {
+.hero__section .hero__wrapper .hero__anchor {
   color: #fff;
   font-family: "Lato";
   font-size: 18px;
@@ -139,19 +173,19 @@ header .header__wrapper .header__anchor {
   height: 68px;
   border: 3px solid #fff;
   display: block;
-  margin: 40px auto;
+  margin: 36px auto;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
-header .header__wrapper .header__anchor:hover {
+.hero__section .hero__wrapper .hero__anchor:hover {
   background-color: #fff;
   color: #000;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
-header .header__wrapper .header__text {
+.hero__section .hero__wrapper .hero__text {
   text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
   color: #fff;
   font-family: "Lato";
@@ -163,7 +197,8 @@ header .header__wrapper .header__text {
   text-transform: uppercase;
 }
 
-header .header__wrapper .header__text span {
+.hero__section .hero__wrapper .hero__text .rewarded {
+  color: #fff;
   font-family: "Lato";
   font-weight: 700;
   font-style: normal;
@@ -178,7 +213,7 @@ header .header__wrapper .header__text span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 100px 0;
+  padding: 100px 10px;
 }
 
 .info__wrapper .info__item {
@@ -190,16 +225,8 @@ header .header__wrapper .header__text span {
   margin: 0 auto;
 }
 
-.info__wrapper .info__item h2 {
-  padding: 20px 0 30px 0;
-  color: #000;
-  font-family: "Lato";
-  font-size: 18px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 30px;
-  text-transform: uppercase;
+.info__wrapper .info__item .info__title {
+  padding: 12px 0 20px 0;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,10 +236,10 @@ header .header__wrapper .header__text span {
           justify-content: center;
 }
 
-.info__wrapper .info__item h2::after {
+.info__wrapper .info__item .info__title::after {
   content: "";
   position: absolute;
-  bottom: 30%;
+  bottom: 18px;
   width: 88px;
   height: 1px;
   background-color: #f57365;
@@ -245,7 +272,7 @@ header .header__wrapper .header__text span {
 }
 
 .app .app__wrapper {
-  padding: 100px 0 0 0;
+  padding: 100px 10px 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,19 +288,10 @@ header .header__wrapper .header__text span {
 }
 
 .app .app__wrapper .app__info {
-  padding: 80px 0 0 0;
+  padding: 70px 0 0 0;
 }
 
-.app .app__wrapper .app__info h2 {
-  color: #000;
-  font-family: "Lato";
-  font-size: 18px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 30px;
-  text-align: left;
-  text-transform: uppercase;
+.app .app__wrapper .app__info .app__title {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -283,7 +301,7 @@ header .header__wrapper .header__text span {
           justify-content: flex-start;
 }
 
-.app .app__wrapper .app__info h2::after {
+.app .app__wrapper .app__info .app__title::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -301,7 +319,7 @@ header .header__wrapper .header__text span {
   font-weight: 300;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 18px;
+  line-height: 26px;
   text-align: left;
 }
 
@@ -320,12 +338,12 @@ header .header__wrapper .header__text span {
   margin: 0 10px 0 0;
 }
 
-@media (max-width: 1037px) {
+@media (max-width: 1057px) {
   .app .app__wrapper {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 30px 0 0 0;
+    padding: 30px 10px 0 10px;
   }
   .app .app__wrapper .app_img {
     -webkit-box-ordinal-group: 2;
@@ -335,6 +353,9 @@ header .header__wrapper .header__text span {
   .app .app__wrapper .app__info {
     padding: 0;
   }
+  .app .app__wrapper .app__info .app__link {
+    padding: 20px 0 20px 0;
+  }
 }
 
 .reviews {
@@ -343,16 +364,34 @@ header .header__wrapper .header__text span {
 }
 
 .reviews .reviews__wrapper {
-  padding: 80px 0;
+  padding: 80px 10px;
 }
 
 .reviews .reviews__wrapper .reviews__item {
+  text-align: center;
+  color: #fff;
+  font-family: "latohairline";
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 36px;
   text-align: center;
 }
 
 .reviews .reviews__wrapper .reviews__item img {
   max-width: 104px;
   margin: 0 auto;
+}
+
+.reviews .reviews__wrapper .reviews__item .reviews__text {
+  font-size: 30px;
+  opacity: 0.15;
+  margin: 30px 0;
+}
+
+.reviews .reviews__wrapper .reviews__item .reviews__user {
+  font-size: 18px;
+  opacity: 0.15;
 }
 
 .reviews .reviews__wrapper .owl-dots {
@@ -378,18 +417,10 @@ header .header__wrapper .header__text span {
 
 .browse {
   text-align: center;
-  padding: 100px 0 0 0;
+  padding: 110px 0 0 0;
 }
 
-.browse h2 {
-  color: #000;
-  font-family: "Lato";
-  font-size: 18px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 30px;
-  text-transform: uppercase;
+.browse .browse__title {
   padding: 0 0 50px 0;
   position: relative;
   display: -webkit-box;
@@ -400,7 +431,7 @@ header .header__wrapper .header__text span {
           justify-content: center;
 }
 
-.browse h2::after {
+.browse .browse__title::after {
   content: "";
   position: absolute;
   top: 40%;
@@ -409,7 +440,7 @@ header .header__wrapper .header__text span {
   background-color: #f57365;
 }
 
-.browse .browse__img {
+.browse .browse__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,8 +451,8 @@ header .header__wrapper .header__text span {
       flex-wrap: wrap;
 }
 
-.statistica .statistica__wrapper {
-  padding: 60px 0;
+.statistic .statistic__wrapper {
+  padding: 60px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -432,12 +463,21 @@ header .header__wrapper .header__text span {
       flex-wrap: wrap;
 }
 
-.statistica .statistica__wrapper .statistica__item {
-  text-align: center;
+.statistic .statistic__wrapper .statistic__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 10px;
 }
 
-.statistica .statistica__wrapper .statistica__item p:first-child {
+.statistic .statistic__wrapper .statistic__item .statistic__number {
   color: #000;
   font-family: "Lato";
   font-size: 36px;
@@ -449,7 +489,7 @@ header .header__wrapper .header__text span {
   margin: 0 0 12px 0;
 }
 
-.statistica .statistica__wrapper .statistica__item p:last-child {
+.statistic .statistic__wrapper .statistic__item .statistic__text {
   color: #000;
   font-family: "Lato";
   font-size: 16px;
@@ -461,7 +501,7 @@ header .header__wrapper .header__text span {
 }
 
 @media (max-width: 767px) {
-  .statistica .statistica__wrapper {
+  .statistic .statistic__wrapper {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -473,7 +513,7 @@ footer {
 }
 
 footer .footer__wrapper {
-  padding: 42px 0 38px 0;
+  padding: 42px 10px 38px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -482,7 +522,7 @@ footer .footer__wrapper {
           justify-content: space-between;
 }
 
-footer .footer__wrapper p:first-child {
+footer .footer__wrapper .footer__copyright {
   opacity: 0.5;
   color: #8b8b8b;
   font-family: "Lato";
@@ -494,7 +534,7 @@ footer .footer__wrapper p:first-child {
   text-align: center;
 }
 
-footer .footer__wrapper p:last-child {
+footer .footer__wrapper .footer__author {
   color: #8b8b8b;
   font-family: "Lato";
   font-size: 14px;
@@ -505,7 +545,7 @@ footer .footer__wrapper p:last-child {
   text-transform: uppercase;
 }
 
-footer .footer__wrapper p:last-child span {
+footer .footer__wrapper .footer__author span {
   color: #000;
   font-family: "Lato";
   font-weight: 400;

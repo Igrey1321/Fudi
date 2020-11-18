@@ -20,71 +20,108 @@ $footerColor: #8b8b8b;
   font-style: normal;
 }
 
+h2 {
+  font-family: "Lato";
+  color: $secondaryColor;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
 .wrapper {
-  max-width: 1120px;
-  padding: 0 30px;
+  max-width: 1160px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
+body {
+  position: relative;
+}
+
 header {
-  background: url(../img/main_image.png) no-repeat 50% 50%;
-  background-size: cover;
-  & .header__wrapper {
-    text-align: center;
-    padding: 0 0 240px 0;
-    & .header__body {
-      display: flex;
-      justify-content: space-between;
-      & nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  & .header__body {
+    display: flex;
+    justify-content: space-between;
+    & nav {
+      & .wrapper-burger {
         padding: 50px 0 0 0;
         display: flex;
-        & a {
-          text-decoration: none;
-          text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
-          color: $primaryColor;
-          font-family: "Lato";
-          font-size: 14px;
-          font-weight: 700;
-          font-style: normal;
-          line-height: 30px;
-          text-align: left;
-          text-transform: uppercase;
-          letter-spacing: 0.7px;
-          margin: 0 30px 0 0;
-        }
-        & .header__menu {
-          width: 25px;
-          height: 20px;
-          border-bottom: 2px solid $primaryColor;
-          position: relative;
-          margin: 5px 0 0 0;
-          &:hover::before {
-            width: 70%;
-            transition: 0.4s all;
+        & li {
+          & a {
+            text-decoration: none;
+            text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
+            color: $primaryColor;
+            font-family: "Lato";
+            font-size: 14px;
+            font-size: calc(12px + 2 * (100vw / 1600));
+            font-weight: 700;
+            font-style: normal;
+            line-height: 30px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin: 0 20px 0 0;
           }
-          &::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            top: 50%;
-            left: 0;
-            background-color: $primaryColor;
-            transition: 0.4s all;
-          }
-          &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            top: 0;
-            left: 0;
-            background-color: $primaryColor;
+          & .burger-menu {
+            width: 25px;
+            height: 20px;
+            position: relative;
+            margin: 5px 0 0 0;
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+            & span {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: $primaryColor;
+            }
+            &:hover::before {
+              width: 70%;
+              transition: 0.4s all;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              top: 45%;
+              left: 0;
+              background-color: $primaryColor;
+              transition: 0.4s all;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              top: 0;
+              left: 0;
+              background-color: $primaryColor;
+            }
           }
         }
       }
     }
-    & .header__title {
+  }
+}
+
+.hero__section {
+  background: url(../img/main_image.png) no-repeat 50% 50%;
+  background-size: cover;
+  & .hero__wrapper {
+    text-align: center;
+    padding: 115px 10px 240px 10px;
+    & .hero__title {
       opacity: 0.7;
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
       color: $primaryColor;
@@ -94,13 +131,13 @@ header {
       font-style: normal;
       letter-spacing: normal;
       line-height: 30px;
-      padding: 275px 0 20px 0;
+      padding: 246px 0 20px 0;
     }
     & h1 {
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
       color: $primaryColor;
       font-family: "Lato";
-      font-size: calc(70px + 30 * (100vw / 1600));
+      font-size: calc(50px + 50 * (100vw / 1600));
       font-weight: 700;
       font-style: normal;
       letter-spacing: normal;
@@ -108,7 +145,7 @@ header {
       text-transform: uppercase;
       padding: 25px;
     }
-    & .header__anchor {
+    & .hero__anchor {
       color: $primaryColor;
       font-family: "Lato";
       font-size: 18px;
@@ -123,7 +160,7 @@ header {
       height: 68px;
       border: 3px solid $primaryColor;
       display: block;
-      margin: 40px auto;
+      margin: 36px auto;
       transition: 0.4s all;
       &:hover {
         background-color: $primaryColor;
@@ -131,7 +168,7 @@ header {
         transition: 0.4s all;
       }
     }
-    & .header__text {
+    & .hero__text {
       text-shadow: -1px 1px 40px rgba(1, 1, 1, 0.55);
       color: $primaryColor;
       font-family: "Lato";
@@ -141,7 +178,8 @@ header {
       letter-spacing: normal;
       line-height: 30px;
       text-transform: uppercase;
-      & span {
+      & .rewarded {
+        color: $primaryColor;
         font-family: "Lato";
         font-weight: 700;
         font-style: normal;
@@ -156,30 +194,22 @@ header {
 .info__wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 100px 0;
+  padding: 100px 10px;
   & .info__item {
     text-align: center;
     max-width: 360px;
     & img {
       margin: 0 auto;
     }
-    & h2 {
-      padding: 20px 0 30px 0;
-      color: $secondaryColor;
-      font-family: "Lato";
-      font-size: 18px;
-      font-weight: 700;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 30px;
-      text-transform: uppercase;
+    & .info__title {
+      padding: 12px 0 20px 0;
       position: relative;
       display: flex;
       justify-content: center;
       &::after {
         content: "";
         position: absolute;
-        bottom: 30%;
+        bottom: 18px;
         width: 88px;
         height: 1px;
         background-color: $lineColor;
@@ -210,7 +240,7 @@ header {
 .app {
   background-color: $bgColor;
   & .app__wrapper {
-    padding: 100px 0 0 0;
+    padding: 100px 10px 0 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -218,17 +248,8 @@ header {
       max-width: 100%;
     }
     & .app__info {
-      padding: 80px 0 0 0;
-      & h2 {
-        color: $secondaryColor;
-        font-family: "Lato";
-        font-size: 18px;
-        font-weight: 700;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 30px;
-        text-align: left;
-        text-transform: uppercase;
+      padding: 70px 0 0 0;
+      & .app__title {
         position: relative;
         display: flex;
         justify-content: flex-start;
@@ -250,7 +271,7 @@ header {
         font-weight: 300;
         font-style: normal;
         letter-spacing: normal;
-        line-height: 18px;
+        line-height: 26px;
         text-align: left;
       }
       & .app__link {
@@ -267,16 +288,19 @@ header {
   }
 }
 
-@media (max-width: 1037px) {
+@media (max-width: 1057px) {
   .app {
     & .app__wrapper {
       justify-content: center;
-      padding: 30px 0 0 0;
+      padding: 30px 10px 0 10px;
       & .app_img {
         order: 1;
       }
       & .app__info {
         padding: 0;
+        & .app__link {
+          padding: 20px 0 20px 0;
+        }
       }
     }
   }
@@ -286,12 +310,28 @@ header {
   background: url(../img/bgreviews.png) no-repeat 50% 50%;
   background-size: cover;
   & .reviews__wrapper {
-    padding: 80px 0;
+    padding: 80px 10px;
     & .reviews__item {
+      text-align: center;
+      color: $primaryColor;
+      font-family: "latohairline";
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 36px;
       text-align: center;
       & img {
         max-width: 104px;
         margin: 0 auto;
+      }
+      & .reviews__text {
+        font-size: 30px;
+        opacity: 0.15;
+        margin: 30px 0;
+      }
+      & .reviews__user {
+        font-size: 18px;
+        opacity: 0.15;
       }
     }
     & .owl-dots {
@@ -316,16 +356,8 @@ header {
 
 .browse {
   text-align: center;
-  padding: 100px 0 0 0;
-  & h2 {
-    color: $secondaryColor;
-    font-family: "Lato";
-    font-size: 18px;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: 30px;
-    text-transform: uppercase;
+  padding: 110px 0 0 0;
+  & .browse__title {
     padding: 0 0 50px 0;
     position: relative;
     display: flex;
@@ -339,23 +371,25 @@ header {
       background-color: $lineColor;
     }
   }
-  & .browse__img {
+  & .browse__list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 }
 
-.statistica {
-  & .statistica__wrapper {
-    padding: 60px 0;
+.statistic {
+  & .statistic__wrapper {
+    padding: 60px 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    & .statistica__item {
-      text-align: center;
+    & .statistic__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 10px 10px;
-      & p:first-child {
+      & .statistic__number {
         color: $secondaryColor;
         font-family: "Lato";
         font-size: 36px;
@@ -366,7 +400,7 @@ header {
         text-align: left;
         margin: 0 0 12px 0;
       }
-      & p:last-child {
+      & .statistic__text {
         color: $secondaryColor;
         font-family: "Lato";
         font-size: 16px;
@@ -381,8 +415,8 @@ header {
 }
 
 @media (max-width: 767px) {
-  .statistica {
-    & .statistica__wrapper {
+  .statistic {
+    & .statistic__wrapper {
       justify-content: center;
     }
   }
@@ -391,10 +425,10 @@ header {
 footer {
   background-color: $bgColor;
   & .footer__wrapper {
-    padding: 42px 0 38px 0;
+    padding: 42px 10px 38px 10px;
     display: flex;
     justify-content: space-between;
-    & p:first-child {
+    & .footer__copyright {
       opacity: 0.5;
       color: $footerColor;
       font-family: "Lato";
@@ -405,7 +439,7 @@ footer {
       line-height: normal;
       text-align: center;
     }
-    & p:last-child {
+    & .footer__author {
       color: $footerColor;
       font-family: "Lato";
       font-size: 14px;

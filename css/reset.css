@@ -45,6 +45,7 @@ a:not([class]) {
 img {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 article>*+* {
@@ -56,6 +57,15 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
